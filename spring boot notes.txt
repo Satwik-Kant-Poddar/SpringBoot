@@ -1,3 +1,13 @@
 spring boot notes 
 
-spring autowire
+spring autowire / dependency injection / Ioc
+
+spring will create object in spring container called spring bean 
+how to create spring bean 
+by adding spring tags like @Component 
+default type singleton
+singleton and prototype
+
+./mvnw spring-boot:run
+./mvnw clean package
+java -jar target/FirstProj-0.0.1-SNAPSHOT.jar
