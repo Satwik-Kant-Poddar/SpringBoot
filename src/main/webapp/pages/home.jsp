@@ -15,6 +15,6 @@
     <p>The current server time is: <%= new java.util.Date() %></p>
      I love java
 
-     Welcome ${name}
+     Welcome ${obj.aname} ,  ${obj.aid} ,  ${obj.alang}
 </body>
 </html>

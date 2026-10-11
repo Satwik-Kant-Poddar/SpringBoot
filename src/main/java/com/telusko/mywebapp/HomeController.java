@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-//import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
@@ -24,12 +24,25 @@ public class HomeController {
 //       session.setAttribute("name",myName);
 //       return "home";
 //   }
+
+    // this was for modelandview with single param
+//    @RequestMapping("home")
+//    public ModelAndView home(@RequestParam("name") String myname){
+//        ModelAndView mv = new ModelAndView();
+//        mv.addObject("name",myname);
+//        mv.setViewName("home");
+//        return mv;
+//    }
+
+     //this was for modelandview with mutli param
     @RequestMapping("home")
-    public ModelAndView home(@RequestParam("name") String myname){
+    public ModelAndView home(Alien alien){
         ModelAndView mv = new ModelAndView();
-        mv.addObject("name",myname);
+        mv.addObject("obj",alien);
         mv.setViewName("home");
         return mv;
     }
+
+
 
 }
