@@ -5,19 +5,31 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 //import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
-   @RequestMapping("home")
-  // @ResponseBody
-    public String home(HttpServletRequest req)
-           //HttpServletResponse
-   {
-       HttpSession session = req.getSession();
-       String name = req.getParameter("name");
-       System.out.println("hi " + name);
-       session.setAttribute("name",name);
-       return "home";
-   }
+//   @RequestMapping("home")
+//  // @ResponseBody
+//    public String home(@RequestParam("name") String myName, HttpSession session)
+//           //(HttpServletRequest req)
+//           //HttpServletResponse
+//   {
+//      HttpSession session = req.getSession();
+//       String name = req.getParameter("name");
+//       ModelAndView mv = new ModelAndView();
+//       System.out.println("hi " + myName);
+//       session.setAttribute("name",myName);
+//       return "home";
+//   }
+    @RequestMapping("home")
+    public ModelAndView home(@RequestParam("name") String myname){
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("name",myname);
+        mv.setViewName("home");
+        return mv;
+    }
+
 }
