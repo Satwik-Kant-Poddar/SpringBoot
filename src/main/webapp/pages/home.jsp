@@ -14,5 +14,7 @@
     <!-- This is JSP Expression code that prints the current date and time -->
     <p>The current server time is: <%= new java.util.Date() %></p>
      I love java
+
+     Welcome ${name}
 </body>
 </html>
