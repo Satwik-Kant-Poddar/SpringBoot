@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>h2 jpa data</title>
+</head>
+<body>
+    <form action="addAlien">
+        <input type="text" name="aid"><br>
+        <input type="text" name = "aname"><br>
+        <input type="submit"><br>
+    </form>
+
+    
+</body>
+</html>
