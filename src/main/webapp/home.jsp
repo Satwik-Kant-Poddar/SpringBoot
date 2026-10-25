@@ -46,5 +46,34 @@
                </form>
            </div>
 
+           <!-- Form 2: Get Alien by Tech -->
+              <div class="form-container">
+                  <h2>Search Alien by Tech</h2>
+                  <form action="getAlienByTech" method="get">
+                      <label>Alien ID:</label>
+                      <input type="text" name="tech"><br>
+                      <input type="submit" value="Search">
+                  </form>
+              </div>
+
+           <!-- Form 2: Get Alien by Tech -->
+                          <div class="form-container">
+                              <h2>Search Alien by Greater than aid</h2>
+                              <form action="getAlienGreaterAid" method="get">
+                                  <label>Alien ID:</label>
+                                  <input type="text" name="aid"><br>
+                                  <input type="submit" value="Search">
+                              </form>
+                          </div>
+                    <!-- Form 2: Get Alien by Tech Sorted-->
+                          <div class="form-container">
+                              <h2>Search Alien by Tech Sorted</h2>
+                              <form action="getAlienTechSorted" method="get">
+                                  <label>Alien ID:</label>
+                                  <input type="text" name="tech"><br>
+                                  <input type="submit" value="Search">
+                              </form>
+                          </div>
+
 </body>
 </html>

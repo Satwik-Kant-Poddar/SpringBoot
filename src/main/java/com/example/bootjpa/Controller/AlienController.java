@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -34,6 +35,33 @@ public class AlienController {
         //Optional<Alien> alien = repo.findById(aid);
         mv.addObject(alien);
         return mv;
+    }
+
+    @RequestMapping("/getAlienByTech")
+    public String getAlienByTech(@RequestParam String tech){
+        List<Alien> alien = repo.findByTech(tech);
+        for(Alien each : alien){
+            System.out.println(each.toString());
+        }
+        return "home.jsp";
+    }
+
+    @RequestMapping("/getAlienGreaterAid")
+    public String getAlienGreaterAid(@RequestParam Integer aid){
+        List<Alien> alien = repo.findByAidGreaterThan(aid);
+        for(Alien each : alien){
+            System.out.println(each.toString());
+        }
+        return "home.jsp";
+    }
+
+    @RequestMapping("/getAlienTechSorted")
+    public String getAlienTechSorted(@RequestParam String tech){
+        List<Alien> alien = repo.findByTechSorted(tech);
+        for(Alien each : alien){
+            System.out.println(each.toString());
+        }
+        return "home.jsp";
     }
 
     @RequestMapping("/deleteAlien")
